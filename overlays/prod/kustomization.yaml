@@ -7,4 +7,4 @@ replicas:
     count: 4
 images:
   - name: nginx
-    newTag: "1.27" # pour tester le déploiement en "Degraded" (utile pour la démo 3) 
+    newTag: "image-inexistante" # pour tester le déploiement en "Degraded" (utile pour la démo 3) 
