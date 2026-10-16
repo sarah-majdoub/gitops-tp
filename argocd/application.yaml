@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: web-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sarah-majdoub/gitops-tp.git
+    targetRevision: main
+    path: overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated:
+      prune: true # supprime du cluster ce qui a été retiré de Git
+      selfHeal: true # corrige toute modification manuelle (auto-heal)
+    syncOptions:
+      - CreateNamespace=true
