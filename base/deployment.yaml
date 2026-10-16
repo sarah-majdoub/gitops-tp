@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 2
+  progressDeadlineSeconds: 60 # passe en "Degraded" après 60 s au lieu de 10 min (utile pour la démo 3)
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
