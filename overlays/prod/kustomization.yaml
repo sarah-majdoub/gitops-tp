@@ -4,7 +4,7 @@ resources:
   - ../../base
 replicas:
   - name: web
-    count: 4
+    count: 2
 images:
   - name: nginx
-    newTag: "1.27"
+    newTag: "1.25"
