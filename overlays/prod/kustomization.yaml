@@ -4,7 +4,7 @@ resources:
   - ../../base
 replicas:
   - name: web
-    count: 2
+    count: 4
 images:
   - name: nginx
-    newTag: "1.25" # pour tester le déploiement en "Degraded" (utile pour la démo 3) 
+    newTag: "1.27" # pour tester le déploiement en "Degraded" (utile pour la démo 3) 
